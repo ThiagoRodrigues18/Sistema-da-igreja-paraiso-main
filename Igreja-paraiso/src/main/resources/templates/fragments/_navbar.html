@@ -1,0 +1,40 @@
+<nav class="navbar navbar-light bg-light" th:fragment="nav-log">
+    <div class="container-fluid">
+      <a th:href="@{/}" class="navbar-text">Home</a>
+      <a th:href="@{/membros/}" class="navbar-text">Membros</a>
+      <a th:href="@{/eventos/}" class="navbar-text">Eventos</a>
+    </div>
+</nav>
+
+<header class="p-3 bg-dark text-white" th:fragment="nav-home">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      
+        <img th:src="@{/images/logo_paraiso.jpg}" id="logo">
+
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+      </ul>
+      
+      <div class="text-end">
+        <a th:href="@{/membros/login/}"><button type="button" class="btn btn-outline-light me-2">Login</button></a>
+        <a th:href="@{/membros/cadastro/}"><button type="button" class="btn btn-warning">Cadastre-se</button></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="navbar navbar-light bg-light" th:fragment="nav-painel" style="box-shadow: 1px 1px 2px black;">
+  <div class="container-fluid">
+      <div class="col">
+          <a class="navbar-brand" th:href="@{/painel/eu/}" style="margin-right:0px;">
+              <img th:src="@{/images/perfil.jpg}" alt="" width="32" height="32" class="rounded-circle me-2" th:if="${membro.imagem != null}">
+              <a th:href="@{/painel/eu/}" th:text="${membro.nome}">editar Conta</a>
+          </a>
+      </div>
+      <div class="col" th:text="${nomePagina}">
+      </div>
+      <div>
+          <a th:href="@{/painel/logout/}"><button class="btn btn-close"></button></a>
+      </div>
+  </div>
+</nav>

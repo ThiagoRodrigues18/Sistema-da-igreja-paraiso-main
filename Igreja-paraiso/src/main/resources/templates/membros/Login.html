@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+    <link rel="stylesheet" href="@{/css/login.css}">
+    -->
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: linear-gradient(to right, #2c4278, rgb(37, 97, 165))  
+        }
+
+        .form {
+            color: white;
+            background-color: rgba(33,36,41,255);
+            position: absolute;
+            top: 56%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            padding: 15px;
+            border-radius: 15px;
+            width: 30%;
+        }
+
+        .inputUser{
+            background: none;
+            border: none;
+            border-bottom: 1px solid white;
+            outline: none;
+            color: white;
+            font-size: 15px;
+            width: 100%;
+            letter-spacing: 1px;
+        }
+
+        .inputBox{
+            position: relative;
+        }
+
+        .labelInput{
+            position: relative;
+            top: -5px;
+            border: none;
+
+            pointer-events: none;
+            transition: .5s;
+        }
+
+        fieldset{
+            border: 3px solid #2c4278;
+        }
+
+        legend{
+            border: 2px solid #2c4278;
+            padding: 10px;
+            text-align: center;
+            background-color: #2c4278;
+            border-radius: 8px;
+        }
+
+        #logo{
+        height: auto; 
+        width: auto; 
+        max-width: 150px; 
+        max-height: 150px;
+        }
+        
+        #submit{
+            background-image: linear-gradient(to right, #2c4278, rgb(37, 97, 165));
+            width: 100%;
+            height: 10%;
+            border: none;
+            padding: 15px;
+            color: white;
+            font-size: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        h5{
+            text-align: center;
+        }
+
+        a{
+            position: relative;
+            top: 10%;
+            left: 37%;
+            color: gray;
+        }
+    </style>
+    <title>Login</title>
+</head>
+
+<body>
+
+    <img th:src="@{/images/logo_paraiso.jpg}" id="logo">
+    
+    <div class="form">
+        <form method="POST" th:action="@{/membros/login/}">
+            <fieldset>
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+            <legend><b>Login</b></legend>
+            <br><br><br><br>
+            <h5>Para acessar a área do membro, <br> entre em sua conta</h5><br><br><br>
+
+            <div class="inputBox">
+                <label for="email" class="labelInput">Email:</label>
+                <input type="text" placeholder=" Digite seu email" name="username" class="inputUser" required><br><br>
+            </div>
+            
+            <div class="inputBox">
+                <label for="senha" class="labelInput">Senha:</label>
+                <input type="password" id="senha" placeholder=" Digite sua senha" name="password" class="inputUser" required>
+            </div>
+            
+            <br><br>
+            <label for="wrong" style="color: rgb(143, 21, 21);"
+                th:text="${session['SPRING_SECURITY_LAST_EXCEPTION'].message}" th:if="${param.error != null}"></label>
+            <br><br>
+
+            <input type="submit" value="Entrar" id="submit"><br><br><br>
+
+            <h5>Não é cadastrado?</h5>
+            <a th:href="@{/membros/cadastro/}">Cadastre-se</a>
+            </fieldset>
+        </form>
+        
+    </div>
+</body>
+
+</html>

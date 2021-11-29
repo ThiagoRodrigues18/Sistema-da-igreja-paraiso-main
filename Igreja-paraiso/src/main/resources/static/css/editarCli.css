@@ -1,0 +1,201 @@
+/*
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: sans-serif;
+    }
+    body{
+        background: linear-gradient(175deg, #2c4278, rgb(193, 220, 255)  );
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+    }
+    .form{
+        background:#fff;
+        width: 50%;
+        height: 70%;
+        margin:auto;
+        margin-top: 0px;
+        text-align: center;
+        border-radius: 10px;
+        margin-top: 50px;
+    }
+
+    h2{
+        background: rgb(158, 187, 196);
+        height: 31px;
+    }
+    input,select{
+        border-radius: 10px;
+        height: 30px;
+        border: none;
+        background:rgb(190, 190, 190);
+    }
+
+    input[type="submit"]{
+        background:rgb(190, 190, 190);
+        cursor: pointer;
+        border-radius: 5px;
+        border: none;
+        width: 80px;
+        height: 35px;
+    }
+    input[type="button"]{
+        background:rgb(190, 190, 190);
+        cursor: pointer;
+        border-radius: 5px;
+        border: none;
+        width: 80px;
+        height: 35px;
+    }
+    input[type="submit"]:hover{
+        background: rgb(0, 121, 161);
+        color: #fff;
+    }
+    input[type="button"]:hover{
+        background: rgb(0, 121, 161);
+        color: #fff;
+    }
+    input[type="text"]{
+
+        box-sizing: border-box;
+        padding-left: 8px;
+        border: unset;
+        outline: none;
+        background-color: rgb(228, 228, 228);
+    }
+    input[type="date"]{
+        box-sizing: border-box;
+        padding-left: 8px;
+        border: unset;
+        outline: none;
+        background-color: rgb(228, 228, 228);
+    }
+    input[type="file"]{
+        box-sizing: border-box;
+        padding-left: 8px;
+        border: unset;
+        outline: none;
+        background-color: rgb(228, 228, 228);
+    }
+    input[type="password"]{
+        box-sizing: border-box;
+        padding-left: 8px;
+        border: unset;
+        outline: none;
+        background-color: rgb(228, 228, 228);
+    }
+
+    #email{
+        box-sizing: border-box;
+        padding-left: 8px;
+        border: unset;
+        outline: none;
+        background-color: rgb(228, 228, 228);
+    }
+
+    #foto{
+        display: none;
+    }
+
+    #labelFoto{
+        background:rgb(190, 190, 190);
+        cursor: pointer;
+        border-radius: 5px;
+        border: none;
+        width: 80px;
+        height: 35px;
+        margin: 0px;
+        padding: 10px;
+    }
+    #labelFoto:hover{
+        background: rgb(0, 121, 161);
+        color: #fff;
+    }
+*/
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(to right, #2c4278, rgb(37, 97, 165))
+}
+.form{
+    color: white;
+    position:absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(33,36,41,255);
+    padding: 15px;
+    border-radius: 15px;
+    width: 45%;
+}
+
+fieldset{
+    border: 3px solid #2c4278;
+}
+
+legend{
+    border: 2px solid #2c4278;
+    padding: 10px;
+    text-align: center;
+    background-color: #2c4278;
+    border-radius: 8px;
+    
+}
+
+.inputBox{
+    position: relative;
+}
+
+.inputUser{
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    width: 100%;
+    letter-spacing: 1px;
+}
+
+.labelInput{
+    position: relative;
+    top: -5px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.botoes{
+    background-image: linear-gradient(to right, #2c4278, rgb(37, 97, 165));
+    width: 48%;
+    border: none;
+    padding: 15px;
+    color: white;
+    font-size: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.botoes2{
+    background-image: linear-gradient(to right, #2c4278, rgb(37, 97, 165));
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    padding: 1.5px;
+    color: white;
+}
+
+.botoes2:hover{
+    background-image: linear-gradient(to right, #1a2d58, rgb(24, 61, 104));
+}
+
+.botoes:hover{
+    background-image: linear-gradient(to right, #1a2d58, rgb(24, 61, 104));
+}
+
+#logo{
+    height: auto; 
+    width: auto; 
+    max-width: 150px; 
+    max-height: 150px;
+}
