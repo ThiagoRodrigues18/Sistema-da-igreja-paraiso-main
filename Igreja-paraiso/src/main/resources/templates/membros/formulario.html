@@ -159,11 +159,11 @@
             <br><br><br>
             
             <label for="foto">Foto de perfil:</label>
-            <br><br>
-            <input type="file" id="foto" style="display: none;" onchange="displayNome(this)" accept=".jpg" required>
-            <button class="botoes2"><label for="foto">Upload</label></button>
+            <input type="file" id="foto" name="file" style="display: none;" class="labelInput" onchange="displayNome(this)" accept=".jpg">
             <br>
+            <button class="botoes2"><label for="foto">Upload</label></button>
             <input type="text" disabled id="nomeFoto" class="inputUser" placeholder="Nome do arquivo">
+
 
             <br><br><br>
 
@@ -211,4 +211,12 @@
     </div>
 
 </body>
+
+<script>
+    function displayNome(file){
+        let arquivo = file.files[0]
+        document.getElementById("nomeFoto").value = arquivo.name
+    }
+</script>
+
 </html>
