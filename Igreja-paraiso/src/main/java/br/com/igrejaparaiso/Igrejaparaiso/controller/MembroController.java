@@ -99,8 +99,9 @@ public class MembroController {
     }
 
     @PostMapping("/cadastro")
-    public ModelAndView cadastrar(@RequestParam("file") MultipartFile file, Membro cli)
+    public ModelAndView cadastrar(@RequestParam MultipartFile file, Membro cli)
             throws InterruptedException, ExecutionException {
+                
         ModelAndView modelo = new ModelAndView("redirect:/membros/login/");
         
         cli.setAdm(false);
@@ -110,7 +111,7 @@ public class MembroController {
         String senhaEncriptada = encoder.encode(cli.getSenha());
         cli.setSenha(senhaEncriptada);
 
-        if (!file.isEmpty()) {
+        if(! file.isEmpty()){
             try {
                 // tranforma a imagem em Bytes
                 byte[] bytes = file.getBytes();
@@ -159,7 +160,7 @@ public class MembroController {
     }
 
     @PostMapping("/{id}/editar")
-    public ModelAndView editar(@RequestParam("file") MultipartFile file, Membro cli)
+    public ModelAndView editar(@RequestParam(required = false) MultipartFile file, Membro cli)
             throws InterruptedException, ExecutionException {
         ModelAndView modelo = new ModelAndView("redirect:/painel/membros/");
 
@@ -173,7 +174,7 @@ public class MembroController {
             cli.setSenha(service.getMembroById(cli.getId()).getSenha());
         }
 
-        if (!file.isEmpty()) {
+        if (file.isEmpty()) {
             try {
                 // Get the file and save it somewhere
                 byte[] bytes = file.getBytes();
